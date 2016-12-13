@@ -31,8 +31,14 @@ import {BatteryService} from '../../tesla-battery.service';
             [max]="40"
             formControlName="temperature">
           </tesla-counter>
+          <tesla-climate 
+            [limit]="tesla.get('config.temperature').value > 10" 
+            formControlName="climate">
+          </tesla-climate>
         </div>
+        <tesla-wheels formControlName="wheels"></tesla-wheels>
       </div>
+      
       <div class="tesla-battery__notice">
         <p>
           The actual amount of range that you experience will vary based 
@@ -74,6 +80,10 @@ export class TeslaBatteryComponent implements OnInit {
     });
 
     this.stats = this.calculateStats(this.results, this.tesla.controls['config'].value);
+
+    this.tesla.controls['config'].valueChanges.subscribe(data => {
+      this.stats = this.calculateStats(this.results, data);
+    });
   }
 
   private calculateStats(models, value): Stat[] {

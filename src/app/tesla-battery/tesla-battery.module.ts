@@ -1,21 +1,30 @@
 /*
  * tesla-battery.module.ts
  */
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import {CommonModule} from '@angular/common';
+import {NgModule} from '@angular/core';
+import {ReactiveFormsModule} from '@angular/forms';
 
 // containers
-import { TeslaBatteryComponent } from './containers/tesla-battery/tesla-battery.component';
+import {TeslaBatteryComponent} from './containers/tesla-battery/tesla-battery.component';
 
 // services
-import { BatteryService } from './tesla-battery.service';
+import {BatteryService} from './tesla-battery.service';
 import {TeslaCarComponent} from './components/tesla-car/tesla-car.component';
 import {TeslaStatsComponent} from './components/tesla-stats/tesla-starts.component';
 import {TeslaCounterComponent} from './components/tesla-counter/tesla-counter.component';
+import {TeslaClimateComponent} from './components/tesla-climate/tesla-climate.component';
+import {TeslaWheelsComponent} from './components/tesla-wheels/tesla-wheels.component';
 
 @NgModule({
-  declarations: [TeslaBatteryComponent, TeslaCarComponent, TeslaStatsComponent, TeslaCounterComponent],
+  declarations: [
+    TeslaBatteryComponent,
+    TeslaCarComponent,
+    TeslaStatsComponent,
+    TeslaCounterComponent,
+    TeslaClimateComponent,
+    TeslaWheelsComponent
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule
@@ -26,4 +35,5 @@ import {TeslaCounterComponent} from './components/tesla-counter/tesla-counter.co
   ],
   exports: [TeslaBatteryComponent]
 })
-export class TeslaBatteryModule {}
+export class TeslaBatteryModule {
+}
