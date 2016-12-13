@@ -5,11 +5,14 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
+// containers
+import { TeslaBatteryComponent } from './containers/tesla-battery/tesla-battery.component';
+
 // services
 import { BatteryService } from './tesla-battery.service';
 
 @NgModule({
-  declarations: [],
+  declarations: [TeslaBatteryComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule
@@ -18,6 +21,6 @@ import { BatteryService } from './tesla-battery.service';
     // add the service to our sub-module
     BatteryService
   ],
-  exports: []
+  exports: [TeslaBatteryComponent]
 })
 export class TeslaBatteryModule {}
