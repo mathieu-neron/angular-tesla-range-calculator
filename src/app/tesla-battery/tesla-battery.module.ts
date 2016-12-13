@@ -12,9 +12,10 @@ import { TeslaBatteryComponent } from './containers/tesla-battery/tesla-battery.
 import { BatteryService } from './tesla-battery.service';
 import {TeslaCarComponent} from './components/tesla-car/tesla-car.component';
 import {TeslaStatsComponent} from './components/tesla-stats/tesla-starts.component';
+import {TeslaCounterComponent} from './components/tesla-counter/tesla-counter.component';
 
 @NgModule({
-  declarations: [TeslaBatteryComponent, TeslaCarComponent, TeslaStatsComponent],
+  declarations: [TeslaBatteryComponent, TeslaCarComponent, TeslaStatsComponent, TeslaCounterComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule
